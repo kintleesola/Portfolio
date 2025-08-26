@@ -4,7 +4,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, rgba(204, 122, 181, 0.165), #bebcbc);
-  color: #eaeaea;
+  color: #b6866d;
   line-height: 1.6;
 }
 
@@ -29,11 +29,12 @@ body {
   position: relative; z-index: 1;
 }
 .hero h1 {
-  font-size: 3rem; color: #fff;
+  font-size: 3rem;
+  color: #b6866d;
   text-shadow: 0 0 12px rgba(0,0,0,0.7);
 }
-.hero h1 span { color: #cc7ab5; }
-.tagline { font-size: 1.3rem; color: #cc7ab5; margin: 10px 0 20px; }
+.hero h1 span { color: #b6866d; }
+.tagline { font-size: 1.3rem; color: #b6866d; margin: 10px 0 20px; }
 
 /* Floating Nav Buttons (in hero center) */
 .nav-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
@@ -64,7 +65,7 @@ body {
 #stickyNav nav ul { list-style: none; text-align: center; }
 #stickyNav nav ul li { display: inline-block; margin: 0 15px; }
 #stickyNav nav ul li a {
-  color: #cc7ab5;
+  color: #b6866d;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s;
@@ -79,6 +80,7 @@ section {
   opacity: 0;
   transform: translateY(50px);
   transition: all 0.8s ease;
+  color: #b6866d;
 }
 section.show {
   opacity: 1;
@@ -94,12 +96,13 @@ section.show {
   border-radius: 15px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.4);
   transition: transform 0.3s, box-shadow 0.3s;
+  color: #b6866d;
 }
 .card:hover, .card-section:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
-.card h3, .card-section h2 { color: #fff; }
+.card h3, .card-section h2 { color: #b6866d; }
 .card-section h2 { border-bottom: 1px solid #444; padding-bottom: 8px; margin-bottom: 15px; }
 
 /* Grid for Hobbies */
@@ -125,6 +128,6 @@ footer {
   text-align: center;
   padding: 20px;
   background: #111827;
-  color: #999;
+  color: #b6866d;
   font-size: 0.85em;
 }
