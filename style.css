@@ -1,38 +1,121 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
+    color: #f0f0f0;
+    overflow-x: hidden;
 }
 
+/* Sparkles background effect */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,192,203,0.3) 1px, transparent 1px);
+    background-size: 80px 80px;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: sparkle 10s linear infinite;
+}
+
+@keyframes sparkle {
+    from { background-position: 0 0; }
+    to { background-position: 100px 100px; }
+}
+
+/* Header */
 header {
-    background: #4CAF50;
+    background: linear-gradient(90deg, #003566, #0077b6);
     color: white;
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
 
+nav ul li a {
+    color: #ffb3c6;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* Sections */
 section {
-    padding: 20px;
-    margin: 10px;
+    padding: 50px 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 h2 {
-    color: #4CAF50;
+    color: #90e0ef;
+    border-bottom: 2px solid #ffb3c6;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
+/* Image Slider */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    animation: glide 12s infinite;
+}
+
+.slides img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+@keyframes glide {
+    0% { transform: translateX(0); }
+    33% { transform: translateX(-100%); }
+    66% { transform: translateX(-200%); }
+    100% { transform: translateX(0); }
+}
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 10px 0;
-    background: #f1f1f1;
+    padding: 20px;
+    background: #003566;
+    color: #ffb3c6;
+    margin-top: 30px;
+    font-size: 0.9em;
 }
