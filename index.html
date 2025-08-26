@@ -7,8 +7,26 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Hello, I'm <span>Kint Lee Sola</span></h1>
+      <p class="tagline">✨ Portfolio of a Website Specialist ✨</p>
+      <div class="nav-buttons">
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#volunteer">Volunteer</a>
+        <a href="#training">Training</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Nav (appears after scroll) -->
+  <header id="stickyNav">
     <nav>
       <ul>
         <li><a href="#hero">Home</a></li>
@@ -24,52 +42,44 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <h1>Hello, I'm <span>Kint Lee Sola</span></h1>
-      <p class="tagline">✨ A portfolio of results, a professional you can count on.✨</p>
-    </div>
-  </section>
-
   <!-- About -->
-  <section id="about">
+  <section id="about" class="card-section">
     <h2>About Me</h2>
     <p>I blend technology, organization, and creativity. With experience as a Virtual Assistant, Ads Analyst, and Executive Assistant, I’ve supported projects, improved workflows, and delivered results with clarity and precision.</p>
   </section>
 
   <!-- Projects -->
-  <section id="projects">
+  <section id="projects" class="card-grid">
     <h2>Projects</h2>
 
-    <div class="project">
+    <div class="card">
       <h3>📝 Executive Support</h3>
       <p>Speech drafting, report creation, and project management for the Vice Mayor’s Office, ensuring professional communication and smooth operations.</p>
     </div>
 
-    <div class="project">
+    <div class="card">
       <h3>📊 Ad Campaign Optimization</h3>
       <p>Analyzed ad performance metrics and improved engagement through targeted adjustments, resulting in increased reach and conversions.</p>
     </div>
 
-    <div class="project">
+    <div class="card">
       <h3>📑 Data Reporting Dashboards</h3>
       <p>Created interactive dashboards using Power BI and Tableau to track KPIs, improving decision-making for remote teams.</p>
     </div>
 
-    <div class="project">
+    <div class="card">
       <h3>💻 Virtual Assistance & Workflow Automation</h3>
       <p>Streamlined task management for clients using Trello, Asana, and Google Workspace, introducing automation to save hours weekly.</p>
     </div>
 
-    <div class="project">
+    <div class="card">
       <h3>🎨 Creative Design Work</h3>
       <p>Produced marketing visuals and layouts with Canva and Figma for online campaigns, enhancing brand consistency and audience engagement.</p>
     </div>
   </section>
 
   <!-- Skills -->
-  <section id="skills">
+  <section id="skills" class="card-section">
     <h2>Skills</h2>
     <ul>
       <li><strong>Productivity Tools:</strong> Microsoft Office Suite, Google Workspace</li>
@@ -85,18 +95,16 @@
   </section>
 
   <!-- Hobbies -->
-  <section id="hobbies">
+  <section id="hobbies" class="card-grid">
     <h2>Hobbies</h2>
-    <ul>
-      <li>🎭 Cosplaying</li>
-      <li>✏️ Sketching</li>
-      <li>📖 Reading</li>
-      <li>🎮 Gaming</li>
-    </ul>
+    <div class="card">🎭 Cosplaying</div>
+    <div class="card">✏️ Sketching</div>
+    <div class="card">📖 Reading</div>
+    <div class="card">🎮 Gaming</div>
   </section>
 
   <!-- Testimonials -->
-  <section id="testimonials">
+  <section id="testimonials" class="card-section">
     <h2>Testimonials</h2>
     <blockquote>
       “Kint showed exceptional communication, teamwork, and presentation skills during the Professional Employment Program. She would be an asset to any team.”  
@@ -105,13 +113,13 @@
   </section>
 
   <!-- Volunteer -->
-  <section id="volunteer">
+  <section id="volunteer" class="card-section">
     <h2>Volunteer Work</h2>
     <p>School Partnership Outreach Assistant – Unbound (2022–2024). Facilitated educational programs for 500+ students and supported donor communications.</p>
   </section>
 
   <!-- Training -->
-  <section id="training">
+  <section id="training" class="card-section">
     <h2>Training & Certifications</h2>
     <ul>
       <li>AWS Academy Cloud Foundations – Jan 2024</li>
@@ -121,7 +129,7 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact">
+  <section id="contact" class="card-section">
     <h2>Contact</h2>
     <form>
       <input type="text" placeholder="Your Name" required>
