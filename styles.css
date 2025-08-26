@@ -3,8 +3,8 @@
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
-  color: #eaeaea; /* clean neutral text */
+  background: linear-gradient(135deg, rgba(204, 122, 181, 0.165), #bebcbc);
+  color: #eaeaea; 
   line-height: 1.6;
 }
 
@@ -21,7 +21,7 @@ header {
 nav ul { list-style: none; text-align: center; }
 nav ul li { display: inline-block; margin: 0 15px; }
 nav ul li a {
-  color: #f5d6de; /* pastel pink accent */
+  color: #cc7ab5; 
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s, border-bottom 0.3s;
@@ -29,10 +29,10 @@ nav ul li a {
 }
 nav ul li a:hover {
   color: #ffffff;
-  border-bottom: 2px solid #f5d6de;
+  border-bottom: 2px solid #cc7ab5;
 }
 
-/* Hero Section with background */
+/* Hero Section */
 .hero {
   height: 100vh;
   display: flex;
@@ -49,7 +49,7 @@ nav ul li a:hover {
   content: "";
   position: absolute;
   top:0; left:0; right:0; bottom:0;
-  background: rgba(0,0,0,0.4); /* overlay for readability */
+  background: rgba(0,0,0,0.4);
 }
 .hero-content {
   position: relative;
@@ -58,15 +58,15 @@ nav ul li a:hover {
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 10px;
-  color: #f0f0f0; /* neutral clean heading */
+  color: #f0f0f0;
   text-shadow: 0 0 10px rgba(0,0,0,0.6);
 }
 .hero h1 span {
-  color: #f5d6de; /* highlight name in pink */
+  color: #cc7ab5;
 }
 .tagline {
   font-size: 1.2rem;
-  color: #f5d6de; /* soft pink */
+  color: #cc7ab5;
   text-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
 
@@ -85,16 +85,48 @@ section.show {
 }
 section h2 {
   margin-bottom: 20px;
-  color: #eaeaea; /* clean neutral */
-  border-bottom: 1px solid #444; /* subtle separator */
+  color: #eaeaea;
+  border-bottom: 1px solid #444;
   font-weight: 600;
   padding-bottom: 5px;
 }
 section p, section li {
-  color: #bbbbbb; /* softer gray for body text */
+  color: #444; 
 }
 
-/* Floating Project Cards */
+/* Skills */
+#skills ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+#skills li {
+  background: rgba(255,255,255,0.08);
+  padding: 12px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+/* Hobbies */
+#hobbies ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+#hobbies li {
+  background: rgba(255,255,255,0.08);
+  padding: 15px 25px;
+  border-radius: 20px;
+  font-size: 1rem;
+  color: #f0f0f0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+#hobbies li:hover { transform: scale(1.05); }
+
+/* Projects */
 #projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -107,63 +139,28 @@ section p, section li {
   border-radius: 15px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.4);
   transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
-  overflow: hidden;
 }
 .project:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
-.project h3 {
-  color: #f0f0f0; /* neutral clean heading */
-  margin-bottom: 10px;
-}
-.project p { font-size: 0.95rem; color: #bbbbbb; }
-.project a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #f5d6de;
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.project a:hover { color: #ffffff; }
-.proof {
-  display: block;
-  margin-top: 8px;
-  font-size: 0.85em;
-  color: #999;
-  font-style: italic;
-}
+.project h3 { color: #f0f0f0; }
 
 /* Testimonials */
 blockquote {
   background: rgba(255,255,255,0.05);
   padding: 20px;
-  border-left: 4px solid #f5d6de;
+  border-left: 4px solid #cc7ab5;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   font-style: italic;
-  color: #dcdcdc;
+  color: #222;
 }
 blockquote cite {
   display: block;
   margin-top: 10px;
   font-size: 0.9em;
-  color: #bbb;
-}
-
-/* Skills */
-#skills ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-}
-#skills li {
-  background: rgba(255,255,255,0.05);
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
+  color: #555;
 }
 
 /* Contact Form */
@@ -178,13 +175,13 @@ form input, form textarea {
   border: none;
   border-radius: 8px;
   font-size: 1rem;
-  background: #1b263b;
-  color: #eaeaea;
+  background: #eee;
+  color: #333;
 }
 form textarea { min-height: 120px; resize: vertical; }
 form button {
   padding: 12px;
-  background: #3a506b;
+  background: #cc7ab5;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -193,7 +190,7 @@ form button {
   transition: background 0.3s, transform 0.2s;
 }
 form button:hover {
-  background: #5c7d99;
+  background: #a85f91;
   transform: translateY(-3px);
 }
 
