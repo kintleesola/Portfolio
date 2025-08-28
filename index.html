@@ -7,180 +7,38 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Sticky Nav -->
-  <header id="stickyNav">
-    <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#hobbies">Hobbies</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#volunteer">Volunteer</a></li>
-        <li><a href="#training">Training</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="container">
+    <!-- Flip Card Wrapper -->
+    <div class="flip-card">
+      <div class="flip-card-inner" id="flipInner">
+        
+        <!-- FRONT (Landing Page) -->
+        <div class="flip-card-front">
+          <h1>Kint Lee Sola</h1>
+          <p class="tagline">✨ Website Specialist | Organized | Creative ✨</p>
+          <div class="nav-buttons">
+            <button onclick="showCard('about')">About Me</button>
+            <button onclick="showCard('experience')">Work Experience</button>
+            <button onclick="showCard('projects')">Projects</button>
+            <button onclick="showCard('skills')">Skills</button>
+            <button onclick="showCard('hobbies')">Hobbies</button>
+            <button onclick="showCard('testimonials')">Testimonials</button>
+            <button onclick="showCard('volunteer')">Volunteer</button>
+            <button onclick="showCard('training')">Training</button>
+            <button onclick="showCard('achievements')">Achievements</button>
+            <button onclick="showCard('contact')">Contact</button>
+          </div>
+        </div>
+        
+        <!-- BACK (Dynamic Sections) -->
+        <div class="flip-card-back" id="cardContent">
+          <button class="back-btn" onclick="goHome()">⬅ Back</button>
+          <div id="contentArea"><!-- JS injects section here --></div>
+        </div>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <h1>Hello, I'm <span>Kint Lee Sola</span></h1>
-      <p class="tagline">✨ This portfolio doesn’t just show work; it shows who I am ✨</p>
-      <div class="nav-buttons">
-        <a href="#about">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#hobbies">Hobbies</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#volunteer">Volunteer</a>
-        <a href="#training">Training</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
       </div>
     </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="card-section">
-    <h2>About Me</h2>
-    <p>I blend technology, organization, and creativity. With experience as a Virtual Assistant, Ads Analyst, and Executive Assistant, I’ve supported projects, improved workflows, and delivered results with clarity and precision.</p>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="card-section">
-    <h2>Projects</h2>
-    <div class="card">
-      <h3>📝 Executive Support</h3>
-      <p>Speech drafting, report creation, and project management for the Vice Mayor’s Office, ensuring professional communication and smooth operations.</p>
-    </div>
-    <div class="card">
-      <h3>📊 Ad Campaign Optimization</h3>
-      <p>Analyzed ad performance metrics and improved engagement through targeted adjustments, resulting in increased reach and conversions.</p>
-    </div>
-    <div class="card">
-      <h3>🎨 Creative Design Work</h3>
-      <p>Produced marketing visuals and layouts with Canva and Figma for online campaigns, enhancing brand consistency and audience engagement.</p>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="card-section">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h3>💻 Technical</h3>
-        <ul>
-          <li>Basic HTML, CSS, JavaScript</li>
-          <li>SQL, Power BI, Tableau, Looker Studio</li>
-          <li>WordPress & Website Management</li>
-          <li>Cloud Tools (AWS, Google Cloud basics)</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h3>🛠 Tools & Software</h3>
-        <ul>
-          <li>Microsoft Office & Google Workspace</li>
-          <li>Trello, Asana, Slack, Zoom</li>
-          <li>Canva, Figma, Adobe XD</li>
-          <li>Mailchimp, HubSpot, Google Analytics</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h3>🤝 Professional</h3>
-        <ul>
-          <li>Customer Service & CRM Systems</li>
-          <li>Project Coordination & Time Management</li>
-          <li>Technical Writing & Documentation</li>
-          <li>Social Media Management & Content Creation</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hobbies -->
-  <section id="hobbies" class="card-section card-grid">
-    <h2>Hobbies</h2>
-    <div class="card"><h3>🎭 Cosplaying</h3></div>
-    <div class="card"><h3>✏️ Sketching</h3></div>
-    <div class="card"><h3>📚 Reading</h3></div>
-    <div class="card"><h3>🎮 Gaming</h3></div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials" class="card-section">
-    <h2>Testimonials</h2>
-    <blockquote>
-      “Kint showed exceptional communication, teamwork, and presentation skills during the Professional Employment Program. She would be an asset to any team.”  
-      <cite>— Hilary Joan Prilles</cite>
-    </blockquote>
-  </section>
-
-  <!-- Volunteer -->
-  <section id="volunteer" class="card-section">
-    <h2>Volunteer Work</h2>
-    <p><strong>School Partnership Outreach Assistant</strong> – Unbound (2022–2024). Facilitated educational programs for 500+ students and supported donor communications.</p>
-  </section>
-
-  <!-- Training -->
-  <section id="training" class="card-section">
-    <h2>Training & Certifications</h2>
-    <ul>
-      <li><strong>Accenture Technology Academy</strong> – Innovative Technology Services Philippines | Accenture (May 2024)</li>
-      <li><strong>AWS Academy Cloud Developing</strong> – Amazon Web Services (Apr 2024)</li>
-      <li><strong>AWS Academy Cloud Foundations</strong> – Amazon Web Services (Jan 2024)</li>
-      <li><strong>Introduction to Cybersecurity</strong> – Cisco Networking Academy (Jun 2023)</li>
-      <li><strong>3GX Solutions</strong> – On-the-Job Training, Installment Department (Feb 2018)</li>
-    </ul>
-  </section>
-
-  <!-- Achievements -->
-  <section id="achievements" class="card-section">
-    <h2>Achievements</h2>
-    <ul>
-      <li><strong>English Immersive Environment (EIE) Champion</strong> – October 2023</li>
-      <li><strong>Dean’s Lister</strong> – August 2021</li>
-    </ul>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="card-section">
-    <h2>Contact</h2>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h3>📞 Phone</h3>
-        <p><a href="tel:0548710261">054-871-0261</a></p>
-        <p><a href="tel:+639368256150">+63 936-825-6150</a></p>
-      </div>
-      <div class="contact-card">
-        <h3>📧 Email</h3>
-        <p><a href="mailto:solakintlee@gmail.com">solakintlee@gmail.com</a></p>
-      </div>
-      <div class="contact-card">
-        <h3>💼 LinkedIn</h3>
-        <p><a href="https://linkedin.com/in/kint-lee-sola/" target="_blank">linkedin.com/in/kint-lee-sola</a></p>
-      </div>
-      <div class="contact-card">
-        <h3>🌐 Resume</h3>
-        <p><a href="https://kintleesola.github.io/ResumeWebsite/" target="_blank">Resume Website</a></p>
-      </div>
-    </div>
-
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2024 Kint Lee Sola</p>
-  </footer>
+  </div>
 
   <script src="script.js"></script>
 </body>
