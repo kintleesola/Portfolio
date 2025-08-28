@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kint Lee Sola - Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kint Lee Sola - Website Portfolio</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
   <div class="container">
-    <!-- Flip Card Wrapper -->
     <div class="flip-card">
       <div class="flip-card-inner" id="flipInner">
-        
-<!-- FRONT (Landing Page) -->
-<div class="flip-card-front hero">
-  <div class="hero-overlay">
-    <h1>Kint Lee Sola</h1>
-    <p class="tagline">✨ Impossible is Nothing — My work knows no limits, only possibilities. ✨</p>
-    <div class="nav-buttons">
-      <button onclick="showCard('about')">About Me</button>
-      <button onclick="showCard('experience')">Work Experience</button>
-      <button onclick="showCard('projects')">Projects</button>
-      <button onclick="showCard('skills')">Skills</button>
-      <button onclick="showCard('hobbies')">Hobbies</button>
-      <button onclick="showCard('testimonials')">Testimonials</button>
-      <button onclick="showCard('volunteer')">Volunteer</button>
-      <button onclick="showCard('training')">Training</button>
-      <button onclick="showCard('achievements')">Achievements</button>
-      <button onclick="showCard('contact')">Contact</button>
-    </div>
-  </div>
-</div>
-        <!-- BACK (Dynamic Sections) -->
-        <div class="flip-card-back" id="cardContent">
-          <button class="back-btn" onclick="goHome()">⬅ Back</button>
-          <div id="contentArea"><!-- JS injects section here --></div>
-        </div>
+
+        <!-- FRONT (Landing) -->
+        <section class="flip-card-front hero" aria-label="Landing">
+          <div class="hero-overlay">
+            <h1>Kint Lee Sola</h1>
+            <p class="tagline">✨ Impossible is Nothing — My work knows no limits, only possibilities. ✨</p>
+            <nav class="nav-buttons" aria-label="Main">
+              <button onclick="showCard('about')">About Me</button>
+              <button onclick="showCard('experience')">Work Experience</button>
+              <button onclick="showCard('projects')">Projects</button>
+              <button onclick="showCard('skills')">Skills</button>
+              <button onclick="showCard('hobbies')">Hobbies</button>
+              <button onclick="showCard('testimonials')">Testimonials</button>
+              <button onclick="showCard('volunteer')">Volunteer</button>
+              <button onclick="showCard('training')">Training</button>
+              <button onclick="showCard('achievements')">Achievements</button>
+              <button onclick="showCard('contact')">Contact</button>
+            </nav>
+          </div>
+        </section>
+
+        <!-- BACK (Dynamic content) -->
+        <section class="flip-card-back" aria-live="polite" aria-label="Content">
+          <button class="back-btn" onclick="goHome()" aria-label="Back to home">⬅ Back</button>
+          <div id="contentArea"><!-- JS injects content here --></div>
+        </section>
 
       </div>
     </div>
