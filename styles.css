@@ -143,3 +143,12 @@ body {
   .container { height: 88vh; }
   .back-btn { position: sticky; top: 6px; z-index: 5; }
 }
+/* Footer */
+.site-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #a57857;
+  margin-top: 15px;
+  padding: 10px 0;
+  border-top: 1px solid rgba(182, 134, 109, 0.3);
+}
