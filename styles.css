@@ -51,48 +51,61 @@ body {
   overflow-y: auto;
 }
 
-/* FRONT */
-.flip-card-front {
+/* HERO (front page with full image) */
+.hero {
+  background: url("images/hero.png") no-repeat center center/cover;
+  width: 100%;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.hero-overlay {
   text-align: center;
+  background: rgba(0, 0, 0, 0.45); /* overlay for readability */
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
 }
 
-.flip-card-front h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #b6866d;
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  color: #fff;
 }
 
-.tagline {
+.hero .tagline {
+  font-size: 1.3rem;
   margin-bottom: 20px;
-  font-size: 1.2rem;
-  color: #a57857;
+  color: #f9d9ef;
 }
 
-.nav-buttons {
+.hero .nav-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
 }
 
-.nav-buttons button {
-  padding: 10px 16px;
+.hero .nav-buttons button {
+  padding: 12px 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: 30px;
   background: #cc7ab5;
-  color: white;
+  color: #fff;
+  font-size: 1rem;
   cursor: pointer;
   transition: transform 0.3s, background 0.3s;
-  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-.nav-buttons button:hover {
+.hero .nav-buttons button:hover {
   background: #a85f91;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
 }
 
 /* BACK */
@@ -130,6 +143,13 @@ body {
 /* Lists */
 ul {
   padding-left: 18px;
+}
+
+/* Skills separated */
+#contentArea h3 {
+  margin-top: 15px;
+  margin-bottom: 8px;
+  color: #a57857;
 }
 
 /* Contact Info styling */
