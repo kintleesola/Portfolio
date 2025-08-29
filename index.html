@@ -1,172 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kint Lee Sola | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kint Lee Sola - Website Portfolio</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+  <div class="container">
+    <div class="flip-card">
+      <div class="flip-card-inner" id="flipInner">
 
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <h1 class="logo">My Portfolio</h1>
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#experience">Work Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#hobbies">Hobbies</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#volunteer">Volunteer</a></li>
-        <li><a href="#training">Training</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+        <!-- FRONT (Landing) -->
+        <section class="flip-card-front hero" aria-label="Landing">
+          <div class="hero-overlay">
+            <h1>Kint Lee Sola</h1>
+            <p class="tagline">✨ Impossible is Nothing — My work knows no limits, only possibilities. ✨</p>
+            <nav class="nav-buttons" aria-label="Main">
+              <button onclick="showCard('about')">About Me</button>
+              <button onclick="showCard('experience')">Work Experience</button>
+              <button onclick="showCard('projects')">Projects</button>
+              <button onclick="showCard('skills')">Skills</button>
+              <button onclick="showCard('hobbies')">Hobbies</button>
+              <button onclick="showCard('testimonials')">Testimonials</button>
+              <button onclick="showCard('volunteer')">Volunteer</button>
+              <button onclick="showCard('training')">Training</button>
+              <button onclick="showCard('achievements')">Achievements</button>
+              <button onclick="showCard('contact')">Contact</button>
+            </nav>
+          </div>
+        </section>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="hero-text" data-aos="fade-up">
-      <h2>Hello, I'm <span>Kint Lee Sola</span></h2>
-      <p>✨ Impossible is Nothing — My work knows no limits, only possibilities ✨</p>
-    </div>
-  </section>
+        <!-- BACK (Dynamic content) -->
+        <section class="flip-card-back" aria-live="polite" aria-label="Content">
+          <button class="back-btn" onclick="goHome()" aria-label="Back to home">⬅ Back</button>
+          <div id="contentArea"><!-- JS injects content here --></div>
+        </section>
 
-  <!-- About -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <div class="about-content" data-aos="fade-up">
-      <img src="images/imageshero.png" alt="Profile" class="profile-pic">
-      <p>
-        I am a passionate IT graduate with experience in customer service, content writing, and creative projects. 
-        My diverse background helps me bridge technology, people, and creativity.
-      </p>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="section">
-    <h2>Work Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item" data-aos="fade-right">
-        <h3>Personal Assistant</h3>
-        <span>Vice Mayor’s Office</span>
-        <p>Drafted official speeches, documents, and managed schedules with confidentiality and precision.</p>
-      </div>
-      <div class="timeline-item" data-aos="fade-left">
-        <h3>Customer Service</h3>
-        <span>BPO Industry</span>
-        <p>Delivered excellent client support and problem-solving in high-pressure environments.</p>
       </div>
     </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card" data-aos="zoom-in">
-        <div class="card-front">Project 1</div>
-        <div class="card-back">
-          <p>Portfolio Website design & development.</p>
-        </div>
-      </div>
-      <div class="project-card" data-aos="zoom-in">
-        <div class="card-front">Project 2</div>
-        <div class="card-back">
-          <p>Data visualization dashboard using Power BI.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="section">
-    <h2>Skills</h2>
-    <div class="skills-grid" data-aos="fade-up">
-      <div class="skill-category">
-        <h3>Technical</h3>
-        <p>HTML, CSS, JS | SQL | Power BI | Tableau | Looker Studio</p>
-      </div>
-      <div class="skill-category">
-        <h3>Productivity & Collaboration</h3>
-        <p>Office & Google Workspace | Trello | Asana | Slack | Zoom</p>
-      </div>
-      <div class="skill-category">
-        <h3>Design & Marketing</h3>
-        <p>Canva | Figma | Adobe XD | Mailchimp | HubSpot | Analytics</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hobbies -->
-  <section id="hobbies" class="section">
-    <h2>Hobbies</h2>
-    <div class="hobbies-grid" data-aos="fade-up">
-      <div class="hobby-card">🎨 Cosplay & Art</div>
-      <div class="hobby-card">🎮 Gaming</div>
-      <div class="hobby-card">📚 Reading</div>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section id="testimonials" class="section">
-    <h2>Testimonials</h2>
-    <div class="testimonial-slider" data-aos="fade-up">
-      <p>"Kint is reliable and creative — always delivers beyond expectations!"</p>
-      <p>"A hardworking professional who adapts to any challenge."</p>
-    </div>
-  </section>
-
-  <!-- Volunteer -->
-  <section id="volunteer" class="section">
-    <h2>Volunteer</h2>
-    <div class="volunteer-card" data-aos="fade-up">
-      <p>Active participant in community youth projects and local events.</p>
-    </div>
-  </section>
-
-  <!-- Training -->
-  <section id="training" class="section">
-    <h2>Training</h2>
-    <div class="training-card" data-aos="fade-up">
-      <p>Internship for Professional Employment Program (PEP)</p>
-    </div>
-  </section>
-
-  <!-- Achievements -->
-  <section id="achievements" class="section">
-    <h2>Achievements</h2>
-    <div class="achievement-grid" data-aos="fade-up">
-      <div class="achievement">🎉 10+ Projects Completed</div>
-      <div class="achievement">📜 Certifications in IT & Data Analytics</div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <form class="contact-form" data-aos="fade-up">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>© 2024 Kint Lee Sola | Portfolio</p>
-  </footer>
+  </div>
 
   <script src="script.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000 });
-  </script>
 </body>
 </html>
