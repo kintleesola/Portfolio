@@ -1,124 +1,194 @@
-const flipInner = document.getElementById("flipInner");
-const contentArea = document.getElementById("contentArea");
+/* ---------- Init AOS ---------- */
+AOS.init({ once: true, duration: 700 });
 
-/* ---- Sections content ---- */
-const sections = {
-  about: `
-    <h2>About Me</h2>
-    <img src="imageshero.png" alt="Kint Lee Sola" class="about-image">
-    <p>I blend technology, organization, and creativity. I've supported executives, optimized ad campaigns, and delivered clear reports and assets—always aiming for calm, useful systems that help teams move faster.</p>
-    <p>Recent roles include Executive Assistant to the Vice Mayor, Ads Analyst, Proofreader, and Virtual Assistant. I enjoy turning scattered tasks into organized, repeatable workflows.</p>
-  `,
-  experience: `
-    <h2>Work Experience</h2>
-    <ul>
-      <li><strong>Executive Assistant of Vice Mayor</strong> — Municipality of Ocampo, Camarines Sur <em>(Aug 2024 – Apr 2025)</em></li>
-      <li><strong>Ads Analyst</strong> — Private Employer | Remote <em>(Jan 2025 – Mar 2025)</em></li>
-      <li><strong>Proofreader (Freelance)</strong> — Upwork | Remote <em>(Dec 2024 – Jun 2025)</em></li>
-      <li><strong>Virtual Assistant (VA)</strong> — Upwork | Remote <em>(Aug 2024 – Feb 2025)</em></li>
-      <li><strong>Customer Service Representative</strong> — Sutherland Global Services <em>(2018–2020)</em></li>
-    </ul>
-  `,
-  projects: `
-    <h2>Projects</h2>
-    <h3>📝 Executive Support</h3>
-    <p>Speech drafting, report creation, and project coordination for the Vice Mayor’s Office.</p>
+/* ---------- Particles background ---------- */
+particlesJS('particles-js', {
+  "particles": {
+    "number": { "value": 50, "density": { "enable": true, "value_area": 800 } },
+    "color": { "value": "#0b73e6" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 0.12 },
+    "size": { "value": 3 },
+    "line_linked": { "enable": true, "distance": 150, "color": "#0b73e6", "opacity": 0.06, "width": 1 },
+    "move": { "enable": true, "speed": 1.5 }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": { "onhover": { "enable": true, "mode": "grab" } }
+  },
+  "retina_detect": true
+});
 
-    <h3>📊 Ad Campaign Optimization</h3>
-    <p>Targeting adjustments and creative testing to improve CTR and conversions.</p>
+/* ---------- Smooth scrolling + nav active ---------- */
+document.querySelectorAll('.nav-link').forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const href = link.getAttribute('href');
+    const target = document.querySelector(href);
+    if (target) {
+      window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+    }
+    document.getElementById('main-nav').classList.remove('open');
+  });
+});
 
-    <h3>🎨 Creative Design</h3>
-    <p>Marketing visuals and layouts built in Canva & Figma for small campaigns.</p>
+window.addEventListener('scroll', () => {
+  const fromTop = window.scrollY + 80;
+  document.querySelectorAll('.nav-link').forEach(link => {
+    const section = document.querySelector(link.getAttribute('href'));
+    if (!section) return;
+    if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+});
 
-    <h3>📂 Confidential Projects</h3>
-    <p>Detailed previews available upon request due to privacy.</p>
-  `,
-  skills: `
-    <h2>Skills</h2>
-    <h3>Technical</h3>
-    <ul>
-      <li>HTML, CSS, JavaScript (fundamentals)</li>
-      <li>SQL, Power BI, Tableau, Looker Studio</li>
-      <li>WordPress & Website Management</li>
-    </ul>
-    <h3>Productivity & Collaboration</h3>
-    <ul>
-      <li>Microsoft Office & Google Workspace</li>
-      <li>Trello, Asana, Slack, Zoom</li>
-    </ul>
-    <h3>Design & Marketing</h3>
-    <ul>
-      <li>Canva, Figma, Adobe XD</li>
-      <li>Mailchimp, HubSpot, Google Analytics</li>
-    </ul>
-    <h3>Other Strengths</h3>
-    <ul>
-      <li>Customer Service & CRM Systems</li>
-      <li>Project Coordination & Time Management</li>
-      <li>Technical Writing & Documentation</li>
-    </ul>
-  `,
-  hobbies: `
-    <h2>Hobbies</h2>
-    <ul>
-      <li>🎭 Cosplaying</li>
-      <li>✏️ Sketching</li>
-      <li>📚 Reading</li>
-      <li>🎮 Gaming</li>
-    </ul>
-  `,
-  testimonials: `
-    <h2>Testimonials</h2>
-    <blockquote>
-      “Kint showed exceptional communication, teamwork, and presentation skills during the Professional Employment Program. She would be an asset to any team.”
-      <br><cite>— Hilary Joan Prilles</cite>
-    </blockquote>
-  `,
-  volunteer: `
-    <h2>Volunteer Work</h2>
-    <p><strong>School Partnership Outreach Assistant</strong> — Unbound (2022–2024)</p>
-    <ul>
-      <li>Facilitated educational programs for 500+ students.</li>
-      <li>Supported donor communications and partnership development.</li>
-    </ul>
-  `,
-  training: `
-    <h2>Training & Certifications</h2>
-    <ul>
-      <li><strong>Accenture Technology Academy</strong> — Innovative Technology Services Philippines | <em>May 2024</em></li>
-      <li><strong>AWS Academy Cloud Developing</strong> — Amazon Web Services | <em>Apr 2024</em></li>
-      <li><strong>AWS Academy Cloud Foundations</strong> — Amazon Web Services | <em>Jan 2024</em></li>
-      <li><strong>Introduction to Cybersecurity</strong> — Cisco Networking Academy | <em>Jun 2023</em></li>
-      <li><strong>3GX Solutions</strong> — On-the-Job Training (Installment Department) | <em>Feb 2018</em></li>
-    </ul>
-  `,
-  achievements: `
-    <h2>Achievements</h2>
-    <ul>
-      <li>English Immersive Environment (EIE) Champion — <em>Oct 2023</em></li>
-      <li>Dean’s Lister — <em>Aug 2021</em></li>
-    </ul>
-  `,
-  contact: `
-    <h2>Contact</h2>
-    <p>📞 Landline: <strong>054-871-0261</strong></p>
-    <p>📱 Mobile: <strong>+63 936-825-6150</strong></p>
-    <p>📧 Email: <a href="mailto:solakintlee@gmail.com">solakintlee@gmail.com</a></p>
-    <p>💼 LinkedIn: <a href="https://linkedin.com/in/kint-lee-sola/" target="_blank">linkedin.com/in/kint-lee-sola</a></p>
-    <p>🌐 Portfolio: <a href="https://kintleesola.github.io/ResumeWebsite/" target="_blank">Resume Website</a></p>
-  `
-};
+/* ---------- Mobile nav ---------- */
+const navToggle = document.getElementById('nav-toggle');
+const mainNav = document.getElementById('main-nav');
+navToggle && navToggle.addEventListener('click', () => mainNav.classList.toggle('open'));
 
-/* ---- Actions ---- */
-function showCard(section) {
-  contentArea.innerHTML = sections[section] || "<p>Section not found.</p>";
-  flipInner.style.transform = "rotateY(180deg)";
+/* ---------- Typing effect (simple) ---------- */
+const roles = ["IT Grad", "Web Creator", "Content Writer", "Problem Solver"];
+let rIndex = 0;
+const typedEl = document.querySelector('.typed-roles');
+function typeRoles() {
+  const text = roles[rIndex % roles.length];
+  let i = 0;
+  typedEl.textContent = '';
+  const t = setInterval(() => {
+    typedEl.textContent += text[i++];
+    if (i === text.length) {
+      clearInterval(t);
+      setTimeout(() => { rIndex++; typeRoles(); }, 1200);
+    }
+  }, 60);
 }
-function goHome() {
-  flipInner.style.transform = "rotateY(0deg)";
+typeRoles();
+
+/* ---------- Stats / counters in hero ---------- */
+function animateCounters() {
+  document.querySelectorAll('.stat-num').forEach(el => {
+    const target = +el.dataset.target || +el.textContent || 0;
+    let cur = 0;
+    const step = Math.max(1, Math.floor(target / 60));
+    const timer = setInterval(() => {
+      cur += step;
+      el.textContent = cur;
+      if (cur >= target) { el.textContent = target; clearInterval(timer); }
+    }, 18);
+  });
 }
 
-/* Optional: keyboard support (Esc = back) */
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") goHome();
+/* ---------- Achievement counters (when in view) ---------- */
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.big-num, .stat-num').forEach(el => {
+        const goal = +el.getAttribute('data-target') || +el.textContent || 0;
+        let count = 0; const inc = Math.max(1, Math.floor(goal / 60));
+        const id = setInterval(() => {
+          count += inc;
+          el.textContent = count;
+          if (count >= goal) { el.textContent = goal; clearInterval(id); }
+        }, 18);
+      });
+      counterObserver.disconnect();
+    }
+  });
+}, { threshold: 0.45 });
+
+document.querySelectorAll('.achieve-card, .hero-stats').forEach(el => counterObserver.observe(el));
+
+/* ---------- Circular skill progress animation ---------- */
+function animateCircles() {
+  document.querySelectorAll('.circle').forEach(c => {
+    const svg = c.querySelector('.progress');
+    const circleLen = 100;
+    const perc = +c.getAttribute('data-perc') || 0;
+    // stroke-dasharray uses percentage of 100 where full circumference = 100
+    const dash = (perc / 100) * circleLen;
+    let cur = 0;
+    const step = Math.max(1, Math.floor(perc / 45));
+    const interval = setInterval(() => {
+      cur += step;
+      const prog = Math.min(cur, perc);
+      const dashVal = (prog / 100) * circleLen;
+      svg.setAttribute('stroke-dasharray', `${dashVal},100`);
+      c.querySelector('.perc').textContent = prog;
+      if (prog >= perc) clearInterval(interval);
+    }, 10);
+  });
+}
+
+/* Intersection trigger for skills circles */
+const skillsObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateCircles();
+      skillsObserver.disconnect();
+    }
+  });
+}, { threshold: 0.5 });
+const skillsSection = document.getElementById('skills');
+skillsSection && skillsObserver.observe(skillsSection);
+
+/* ---------- Testimonials slider (simple) ---------- */
+const slider = document.getElementById('testimonialSlider');
+const tPrev = document.getElementById('tPrev');
+const tNext = document.getElementById('tNext');
+let tIndex = 0;
+function showTestimonial(i) {
+  const cards = slider.querySelectorAll('.test-card');
+  const w = cards[0].offsetWidth + 14;
+  slider.style.transform = `translateX(${-(i * w)}px)`;
+}
+tNext && tNext.addEventListener('click', () => {
+  const cards = slider.querySelectorAll('.test-card');
+  tIndex = (tIndex + 1) % cards.length;
+  showTestimonial(tIndex);
+});
+tPrev && tPrev.addEventListener('click', () => {
+  const cards = slider.querySelectorAll('.test-card');
+  tIndex = (tIndex - 1 + cards.length) % cards.length;
+  showTestimonial(tIndex);
+});
+// autoplay
+setInterval(() => { tNext && tNext.click(); }, 5000);
+
+/* ---------- Tilt init ---------- */
+VanillaTilt.init(document.querySelectorAll('.tilt'), { max: 8, speed: 400, glare: true, "max-glare": 0.08 });
+
+/* ---------- Contact form (local simulation) ---------- */
+const form = document.getElementById('contactForm');
+const formMsg = document.getElementById('formMsg');
+form && form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  formMsg.textContent = 'Sending...';
+  setTimeout(() => {
+    formMsg.textContent = 'Message sent! Thank you — I will reply soon.';
+    form.reset();
+  }, 900);
+});
+
+/* ---------- Theme toggle ---------- */
+const themeToggle = document.getElementById('themeToggle');
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  const icon = themeToggle.querySelector('i');
+  icon.classList.toggle('fa-sun');
+  icon.classList.toggle('fa-moon');
+});
+
+/* ---------- Simple helpers for initial animations ---------- */
+document.addEventListener('DOMContentLoaded', () => {
+  // set hero stats targets
+  document.querySelectorAll('.stat-num').forEach((e, i) => {
+    const t = [12,5,3][i] || 0;
+    e.dataset.target = t;
+  });
+  // animate counters shortly after load
+  setTimeout(animateCounters, 900);
 });
