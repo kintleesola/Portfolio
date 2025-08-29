@@ -15,6 +15,13 @@ body {
   padding: 1rem;
 }
 
+/* Smaller tagline */
+.tagline {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
 /* Front image (home) */
 .front-image { margin: 20px 0 10px; }
 .front-image img {
@@ -52,11 +59,21 @@ body {
 #content p, #content li { line-height: 1.6; }
 #content ul { padding-left: 18px; }
 
-/* About image inside the About section */
+/* About image (now pops more, top of text) */
 .about-image {
-  width: 200px; height: 200px; object-fit: cover;
-  border-radius: 12px; box-shadow: 0 8px 18px rgba(0,0,0,.15);
-  display: block; margin: 6px 0 12px;
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto 14px;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+  object-fit: cover;
+  aspect-ratio: 16/9;
+  transition: transform .3s, box-shadow .3s;
+}
+.about-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 14px 36px rgba(0,0,0,.45);
 }
 
 /* Cert cards */
