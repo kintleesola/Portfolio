@@ -1,50 +1,432 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kint Lee Sola - Website Portfolio</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kint Lee Sola — Portfolio</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="flip-card">
-      <div class="flip-card-inner" id="flipInner">
 
-        <!-- FRONT (Landing) -->
-        <section class="flip-card-front hero" aria-label="Landing">
-          <div class="hero-overlay">
-            <h1>Kint Lee Sola</h1>
-            <p class="tagline">✨ Impossible is Nothing — My work knows no limits, only possibilities. ✨</p>
-            <nav class="nav-buttons" aria-label="Main">
-              <button onclick="showCard('about')">About Me</button>
-              <button onclick="showCard('experience')">Work Experience</button>
-              <button onclick="showCard('projects')">Projects</button>
-              <button onclick="showCard('skills')">Skills</button>
-              <button onclick="showCard('hobbies')">Hobbies</button>
-              <button onclick="showCard('testimonials')">Testimonials</button>
-              <button onclick="showCard('volunteer')">Volunteer</button>
-              <button onclick="showCard('training')">Training</button>
-              <button onclick="showCard('achievements')">Achievements</button>
-              <button onclick="showCard('contact')">Contact</button>
-            </nav>
-          </div>
-          <!-- Footer for front -->
-          <footer class="site-footer">© 2024 Kint Lee Sola | Portfolio</footer>
-        </section>
-
-        <!-- BACK (Dynamic content) -->
-        <section class="flip-card-back" aria-live="polite" aria-label="Content">
-          <button class="back-btn" onclick="goHome()" aria-label="Back to home">⬅ Back</button>
-          <div id="contentArea"><!-- JS injects content here --></div>
-          <!-- Footer for back -->
-          <footer class="site-footer">© 2024 Kint Lee Sola | Portfolio</footer>
-        </section>
-
-      </div>
-    </div>
+  <!-- DARK MODE TOGGLE -->
+  <div class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+    <i class="fa-solid fa-moon"></i>
   </div>
 
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home">Kint Lee Sola</a>
+
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger"></span>
+      </button>
+
+      <nav id="main-nav" class="main-nav">
+        <ul>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About Me</a></li>
+          <li><a href="#work" class="nav-link">Work Experience</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#volunteer" class="nav-link">Volunteer</a></li>
+          <li><a href="#training" class="nav-link">Training</a></li>
+          <li><a href="#achievements" class="nav-link">Achievements</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO with particles + typing -->
+  <section id="home" class="hero">
+    <div id="particles-js" class="particles-bg"></div>
+
+    <div class="container hero-inner">
+      <div class="hero-left" data-aos="fade-right" data-aos-duration="1000">
+        <h1 class="hero-title">
+          <span class="typing">I’m Kint —</span>
+          <span class="typed-roles"> IT Grad · Web Creator · Content Writer</span>
+        </h1>
+        <p class="hero-sub">Impossible is Nothing — My work knows no limits, only possibilities.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-ghost" href="#contact">Hire Me</a>
+        </div>
+
+        <div class="hero-stats" data-aos="fade-up" data-aos-delay="400">
+          <div class="stat">
+            <div class="stat-num" data-target="12">0</div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-target="5">0</div>
+            <div class="stat-label">Certificates</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-target="3">0</div>
+            <div class="stat-label">Years Exp</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right" data-aos="zoom-in" data-aos-duration="900">
+        <div class="hero-card glass">
+          <img src="images/imageshero.png" alt="Kint hero" onerror="this.src='https://via.placeholder.com/420x360?text=Hero+Image'">
+          <div class="hero-card-body">
+            <h3>Kint Lee Sola</h3>
+            <p>IT Graduate • Creative Assistant • Web & Content</p>
+            <div class="socials">
+              <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#"><i class="fa-brands fa-github"></i></a>
+              <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- ABOUT -->
+    <section id="about" class="section centered card" data-aos="fade-up">
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>I’m an Information Technology graduate with experience in customer service, personal assistance, website management, and creative content. I love solving problems, designing experiences, and building things that help people.</p>
+            <ul class="about-highlights">
+              <li><i class="fa-solid fa-check"></i> Strong communication & documentation skills</li>
+              <li><i class="fa-solid fa-check"></i> Web fundamentals: HTML, CSS, JS</li>
+              <li><i class="fa-solid fa-check"></i> Data tools: SQL, Power BI, Tableau</li>
+            </ul>
+            <a class="btn btn-outline" href="#work">See my experience</a>
+          </div>
+          <div class="about-details glass">
+            <h4>Quick Facts</h4>
+            <div class="facts">
+              <div><strong>Location</strong><span>Philippines</span></div>
+              <div><strong>Email</strong><span>youremail@example.com</span></div>
+              <div><strong>Education</strong><span>BS Information Technology</span></div>
+              <div><strong>Availability</strong><span>Open to WFH / Remote</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK (vertical timeline with glow) -->
+    <section id="work" class="section card" data-aos="fade-up">
+      <div class="container">
+        <h2>Work Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>Personal Assistant — Office of the Vice Mayor</h3>
+              <p class="muted">2022 — 2023</p>
+              <p>Managed official documents, scheduled events, prepared speeches and ensured smooth office operations with discretion and timeliness.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item reverse" data-aos="fade-left" data-aos-delay="200">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>Customer Service Representative — BPO</h3>
+              <p class="muted">2021 — 2022</p>
+              <p>Handled multi-channel client support, met KPIs, and assisted in process documentation and training new hires.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+            <div class="dot"></div>
+            <div class="content">
+              <h3>Web & Content Creator — Freelance</h3>
+              <p class="muted">2020 — Present</p>
+              <p>Design and build portfolio sites, write content, and create visuals for social media campaigns and events.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS (flip cards) -->
+    <section id="projects" class="section centered card" data-aos="fade-up">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <!-- flip card 1 -->
+          <div class="flip-card" data-aos="zoom-in" data-aos-delay="80">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <img src="images/project1.jpg" alt="Project 1" onerror="this.src='https://via.placeholder.com/400x260?text=Project+1'">
+                <h3>Portfolio Website</h3>
+              </div>
+              <div class="flip-back">
+                <h3>Portfolio Website</h3>
+                <p>Custom portfolio showcasing projects, skills, and contact. Built with HTML/CSS/JS.</p>
+                <a class="btn btn-sm" href="#">View</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- flip card 2 -->
+          <div class="flip-card" data-aos="zoom-in" data-aos-delay="160">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <img src="images/project2.jpg" alt="Project 2" onerror="this.src='https://via.placeholder.com/400x260?text=Project+2'">
+                <h3>Content Campaign</h3>
+              </div>
+              <div class="flip-back">
+                <h3>Content Campaign</h3>
+                <p>Planned and executed social media content and engagement strategies for local events.</p>
+                <a class="btn btn-sm" href="#">Details</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- flip card 3 -->
+          <div class="flip-card" data-aos="zoom-in" data-aos-delay="240">
+            <div class="flip-inner">
+              <div class="flip-front">
+                <img src="images/project3.jpg" alt="Project 3" onerror="this.src='https://via.placeholder.com/400x260?text=Project+3'">
+                <h3>Data Dashboard</h3>
+              </div>
+              <div class="flip-back">
+                <h3>Data Dashboard</h3>
+                <p>Built reports and dashboards using Power BI and Looker Studio to visualize KPIs.</p>
+                <a class="btn btn-sm" href="#">Open</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS (circular progress) -->
+    <section id="skills" class="section card" data-aos="fade-up">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-wrap">
+          <div class="skills-left">
+            <div class="skills-circles">
+              <!-- each circle uses SVG and data-perc for JS to animate -->
+              <div class="circle" data-perc="92" data-label="HTML/CSS">
+                <svg viewBox="0 0 36 36" class="circular">
+                  <path class="bg" d="M18 2.0845a15.9155 15.9155 0 1 0 0 31.831 15.9155 15.9155 0 1 0 0-31.831"/>
+                  <path class="progress" stroke-dasharray="0,100" d="M18 2.0845a15.9155 15.9155 0 1 0 0 31.831 15.9155 15.9155 0 1 0 0-31.831"/>
+                </svg>
+                <div class="circle-label"><span class="perc">0</span>%<small>HTML/CSS</small></div>
+              </div>
+
+              <div class="circle" data-perc="78" data-label="JavaScript">
+                <svg viewBox="0 0 36 36" class="circular">
+                  <path class="bg" d="M18 2.0845a15.9155 15.9155 0 1 0 0 31.831 15.9155 15.9155 0 1 0 0-31.831"/>
+                  <path class="progress" stroke-dasharray="0,100" d="M18 2.0845a15.9155 15.9155 0 1 0 0 31.831 15.9155 15.9155 0 1 0 0-31.831"/>
+                </svg>
+                <div class="circle-label"><span class="perc">0</span>%<small>JavaScript</small></div>
+              </div>
+
+              <div class="circle" data-perc="75" data-label="SQL / BI">
+                <svg viewBox="0 0 36 36" class="circular">
+                  <path class="bg" d="M18 2.0845a15.9155 15.9155 0 1 0 0 31.831 15.9155 15.9155 0 1 0 0-31.831"/>
+                  <path class="progress" stroke-dasharray="0,100" d="M18 2.0845a15.9155 15.9155 0 1 0 0 31.831 15.9155 15.9155 0 1 0 0-31.831"/>
+                </svg>
+                <div class="circle-label"><span class="perc">0</span>%<small>SQL / BI</small></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-right">
+            <div class="skill-list-card glass" data-aos="fade-left">
+              <h4>Productivity & Collaboration</h4>
+              <p>Trello · Asana · Slack · Zoom · Microsoft Office · Google Workspace</p>
+
+              <h4 style="margin-top:16px">Design & Marketing</h4>
+              <p>Canva · Figma · Adobe XD · Mailchimp · HubSpot · Google Analytics</p>
+
+              <h4 style="margin-top:16px">Other Strengths</h4>
+              <p>Customer Service · Project Coordination · Technical Writing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOBBIES (tilt cards) -->
+    <section id="hobbies" class="section centered card" data-aos="fade-up">
+      <div class="container">
+        <h2>Hobbies</h2>
+        <div class="hobby-grid">
+          <div class="hobby-card tilt" data-tilt data-tilt-max="8">
+            <div class="emoji">🎭</div>
+            <h4>Cosplay</h4>
+            <p>Creating costumes & creative photoshoots.</p>
+          </div>
+          <div class="hobby-card tilt" data-tilt data-tilt-max="8">
+            <div class="emoji">🎮</div>
+            <h4>Gaming</h4>
+            <p>Exploring new games and tech trends.</p>
+          </div>
+          <div class="hobby-card tilt" data-tilt data-tilt-max="8">
+            <div class="emoji">✍️</div>
+            <h4>Writing</h4>
+            <p>Blogging and content creation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS (carousel) -->
+    <section id="testimonials" class="section card" data-aos="fade-up">
+      <div class="container">
+        <h2>Testimonials</h2>
+        <div class="testimonials-wrap">
+          <button class="t-arrow" id="tPrev"><i class="fa-solid fa-chevron-left"></i></button>
+          <div class="testimonials-slider" id="testimonialSlider">
+            <div class="test-card">
+              <p>"Kint is reliable and always meets deadlines. Highly recommended!"</p>
+              <div class="by">— Former Supervisor</div>
+            </div>
+            <div class="test-card">
+              <p>"A creative mind with strong technical fundamentals. A real asset."</p>
+              <div class="by">— Colleague</div>
+            </div>
+            <div class="test-card">
+              <p>"Approachable, professional, and excellent at managing details."</p>
+              <div class="by">— Mentor</div>
+            </div>
+          </div>
+          <button class="t-arrow" id="tNext"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOLUNTEER & TRAINING (glass cards) -->
+    <section id="volunteer" class="section centered card" data-aos="fade-up">
+      <div class="container">
+        <h2>Volunteer</h2>
+        <div class="glass-grid">
+          <div class="glass-card" data-aos="flip-left">
+            <i class="fa-solid fa-hands-holding"></i>
+            <h4>Community Cleanups</h4>
+            <p>Organized local clean-up drives and youth activities.</p>
+          </div>
+          <div class="glass-card" data-aos="flip-left" data-aos-delay="100">
+            <i class="fa-solid fa-chalkboard-teacher"></i>
+            <h4>Youth Mentoring</h4>
+            <p>Mentored students on digital literacy and soft skills.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="training" class="section card" data-aos="fade-up">
+      <div class="container">
+        <h2>Training</h2>
+        <div class="training-grid">
+          <div class="cert-card tilt">
+            <div class="ribbon">PEP</div>
+            <h4>Professional Employment Program (PEP)</h4>
+            <p>Internship focused on office operations and admin tasks.</p>
+          </div>
+          <div class="cert-card tilt">
+            <div class="ribbon">BI</div>
+            <h4>Power BI Fundamentals</h4>
+            <p>Basics of data modeling and visualization.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS (counters) -->
+    <section id="achievements" class="section centered card" data-aos="fade-up">
+      <div class="container">
+        <h2>Achievements</h2>
+        <div class="achieve-grid">
+          <div class="achieve-card">
+            <div class="big-num" data-target="10">0</div>
+            <div class="label">Projects</div>
+          </div>
+          <div class="achieve-card">
+            <div class="big-num" data-target="5">0</div>
+            <div class="label">Certifications</div>
+          </div>
+          <div class="achieve-card">
+            <div class="big-num" data-target="3">0</div>
+            <div class="label">Years Experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT (form) -->
+    <section id="contact" class="section card" data-aos="fade-up">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="contact-grid">
+          <form id="contactForm" class="contact-form glass">
+            <div class="field">
+              <input type="text" id="name" required>
+              <label for="name">Your Name</label>
+            </div>
+            <div class="field">
+              <input type="email" id="email" required>
+              <label for="email">Email</label>
+            </div>
+            <div class="field">
+              <textarea id="message" rows="5" required></textarea>
+              <label for="message">Message</label>
+            </div>
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <div id="formMsg" class="form-msg" aria-live="polite"></div>
+          </form>
+
+          <div class="contact-info">
+            <div class="info-card" data-aos="fade-left">
+              <h4>Get in touch</h4>
+              <p><i class="fa-solid fa-envelope"></i> youremail@example.com</p>
+              <p><i class="fa-solid fa-phone"></i> +63 912 345 6789</p>
+              <p><i class="fa-solid fa-map-pin"></i> Philippines</p>
+            </div>
+            <div class="info-card" data-aos="fade-left" data-aos-delay="100">
+              <h4>Follow</h4>
+              <div class="socials">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2024 Kint Lee Sola — All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Libraries: AOS, Particles, Vanilla-tilt -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.3/dist/vanilla-tilt.min.js"></script>
+
+  <!-- Main script -->
   <script src="script.js"></script>
 </body>
 </html>
