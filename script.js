@@ -6,7 +6,12 @@ const sections = {
   about: `
     <h2>About Me</h2>
     <img src="imageshero.png" alt="Kint Lee Sola" class="about-image">
-    <p>I’m Kint Lee Sola, a graduate of Information Technology with experience as a Customer Service Representative, Virtual Assistant, and Executive Assistant. I have supported diverse clients with professionalism and efficiency, strengthening my skills in organization, problem-solving, and client communication. I bring multilingual communication skills, including proficiency in Japanese, which helps me deliver accurate and natural written expression for global audiences. I’m also well-versed in remote work environments, with expertise in task management, reporting, and collaboration using tools like Google Workspace, Trello, Microsoft Office Suite, and CRM platforms. Beyond work, I enjoy cosplay, which allows me to express creativity and attention to detail, as well as hobbies like reading, continuous learning, and exploring digital tools. I take pride in being adaptable, reliable, and detail-oriented—qualities that I believe make me a valuable member of any support team.</p>
+    <p>I’m Kint Lee Sola, a graduate of Information Technology with experience as a Customer Service Representative, Virtual Assistant, and Executive Assistant. 
+    I have supported diverse clients with professionalism and efficiency, strengthening my skills in organization, problem-solving, and client communication. 
+    I bring multilingual communication skills, including proficiency in Japanese, which helps me deliver accurate and natural written expression for global audiences. 
+    I’m also well-versed in remote work environments, with expertise in task management, reporting, and collaboration using tools like Google Workspace, Trello, Microsoft Office Suite, and CRM platforms. 
+    Beyond work, I enjoy cosplay, which allows me to express creativity and attention to detail, as well as hobbies like reading, continuous learning, and exploring digital tools. 
+    I take pride in being adaptable, reliable, and detail-oriented—qualities that I believe make me a valuable member of any support team.</p>
   `,
   experience: `
     <h2>Work Experience</h2>
@@ -20,6 +25,7 @@ const sections = {
   `,
   projects: `
     <h2>Projects</h2>
+    <div class="Project-box">
     <h3>📝 Executive Support</h3>
     <p>Speech drafting, report creation, and project coordination for the Vice Mayor’s Office.</p>
 
@@ -39,22 +45,28 @@ const sections = {
       <li>HTML, CSS, JavaScript (fundamentals)</li>
       <li>SQL, Power BI, Tableau, Looker Studio</li>
       <li>WordPress & Website Management</li>
+      <li>Xero & QuickBooks (Bookkeeping & Financial Management)</li>
     </ul>
     <h3>Productivity & Collaboration</h3>
     <ul>
       <li>Microsoft Office & Google Workspace</li>
       <li>Trello, Asana, Slack, Zoom</li>
+      <li>Calendar & Email Management</li>
+      <li>Data Entry & File Organization</li>
     </ul>
     <h3>Design & Marketing</h3>
     <ul>
       <li>Canva, Figma, Adobe XD</li>
       <li>Mailchimp, HubSpot, Google Analytics</li>
+      <li>Social Media Scheduling & Content Creation</li>
     </ul>
     <h3>Other Strengths</h3>
     <ul>
       <li>Customer Service & CRM Systems</li>
+      <li>Invoicing, Bank Reconciliation & Financial Reporting</li>
       <li>Project Coordination & Time Management</li>
       <li>Technical Writing & Documentation</li>
+      <li>Confidential Document Handling & Executive Support</li>
     </ul>
   `,
   hobbies: `
@@ -68,6 +80,7 @@ const sections = {
   `,
   testimonials: `
     <h2>Testimonials</h2>
+    <div class="Testimonials-box">
     <blockquote>
       “Kint showed exceptional communication, teamwork, and presentation skills during the Professional Employment Program. She would be an asset to any team.”
       <br><cite>— Hilary Joan Prilles</cite>
@@ -83,6 +96,7 @@ const sections = {
   `,
   training: `
     <h2>Training & Certifications</h2>
+     <div class="Training & Certifications-box">
     <ul>
       <li><strong>Accenture Technology Academy</strong> — Innovative Technology Services Philippines | <em>May 2024</em></li>
       <li><strong>AWS Academy Cloud Developing</strong> — Amazon Web Services | <em>Apr 2024</em></li>
