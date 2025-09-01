@@ -6,8 +6,7 @@ const sections = {
   about: `
     <h2>About Me</h2>
     <img src="imageshero.png" alt="Kint Lee Sola" class="about-image">
-    <p>I blend technology, organization, and creativity. I've supported executives, optimized ad campaigns, and delivered clear reports and assets—always aiming for calm, useful systems that help teams move faster.</p>
-    <p>Recent roles include Executive Assistant to the Vice Mayor, Ads Analyst, Proofreader, and Virtual Assistant. I enjoy turning scattered tasks into organized, repeatable workflows.</p>
+    <p>I’m Kint Lee Sola, a graduate of Information Technology with experience as a Customer Service Representative, Virtual Assistant, and Executive Assistant. I have supported diverse clients with professionalism and efficiency, strengthening my skills in organization, problem-solving, and client communication. I bring multilingual communication skills, including proficiency in Japanese, which helps me deliver accurate and natural written expression for global audiences. I’m also well-versed in remote work environments, with expertise in task management, reporting, and collaboration using tools like Google Workspace, Trello, Microsoft Office Suite, and CRM platforms. Beyond work, I enjoy cosplay, which allows me to express creativity and attention to detail, as well as hobbies like reading, continuous learning, and exploring digital tools. I take pride in being adaptable, reliable, and detail-oriented—qualities that I believe make me a valuable member of any support team.</p>
   `,
   experience: `
     <h2>Work Experience</h2>
